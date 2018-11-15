@@ -1,0 +1,14 @@
+import com.sysdata.coadquirencia.*
+  
+def emp = Empresa.findByCodigo("CDT")
+def dbFidc = DadosBancarios.get(3551)
+def newDb = new DadosBancarios()
+newDb.banco = dbFidc.banco
+newDb.agencia = dbFidc.agencia
+newDb.dvAgencia = dbFidc.dvAgencia
+newDb.conta = dbFidc.conta
+newDb.dvConta = dbFidc.dvConta
+newDb.tipoConta = dbFidc.tipoConta
+newDb.principal = dbFidc.principal
+newDb.participante = emp.participante
+newDb.save(flush: true)
